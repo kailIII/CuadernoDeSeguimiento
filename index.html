@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Logeo</title>
+</head>
+<body>
+<?php
+echo 'de';
+?>
+<form action="" method="post">
+<table align="center" border="1px">
+<tr>
+	<td>Nombre de Usuario</td>
+    <td><input type="text" name="username" />
+</tr>
+<tr>
+	<td>Password</td>
+    <td><input type="password" name="password"/></td>
+</tr>
+<tr>
+	<td colspan="2"><?php if($message != ""){ echo $message;} ?></td>
+
+</tr>
+<tr>
+	<td colspan="2" align="center"><input type="submit" value="Enviar"/></td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>
