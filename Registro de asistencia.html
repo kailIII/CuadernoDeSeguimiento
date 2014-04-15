@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>REGISTRO DE ASISTENCIA</title>
+	<script>
+	var user=0;
+		if(user==1){
+			alert("Usuario no registrado");
+
+		}
+		function printReport(){
+			print("<h2>Reporte de Asistencia</h2>");
+			print("<h4>By. iFae</h4>")	;
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<img src="emi.jpg"  >
+		<center>
+			<h2>REGISTRO DE ASISTENCIA</h2>
+			<h5 id="periodoInf">Periodo Informativo</h5>
+		</center>
+	</div>
+	<div id="datosPeriodo">
+		<table>
+				<tr>
+					<td>Asignatura: </td>
+					<td>Paradigmas de Analisis</td>
+				</tr>
+				<tr>
+					<td>Docente</td>
+					<td>Ing.aaa</td>
+				</tr>
+
+				<tr>
+					<td>Curso</td>
+					<td>6to Semestre</td>
+				</tr>
+				<tr>
+					<td>Nro de Clases</td>
+					<td>3</td>
+				</tr>
+		</table>
+		<hr></hr>
+			<!--
+		<h6>Asignatura: Paradigmas de Analisis</h6>
+		<h6>Docente: ing...</h6>
+		<h6>Curso: 6to Semestre</h6>
+		<h6>Nro Clases: 3</h6>
+	-->
+	</div>
+	<center>
+	<div id="table">
+		<script>
+			document.write(
+				"<table cellpadding=6 cellspaciong=3 border=2>"+
+				"<td>Nro</td>"+
+				"<td>Nombre</td>"+
+				"<td>Ci</td>"+
+				"<td>Clase 1</td>"+
+				"<td>Clase 2</td>"+
+				"<td>Clase 3</td>"+
+				"<td>Nota</td>"+
+				"<td>Habilitado</td>");
+			//document.write("<table cellpadding=10 cellspaciong=6 border=6>");
+			for(var i=1;i<=5;i++){
+
+				document.write("<tr>");
+					for(var j=1;j<=8;j++){
+
+						document.write("<td>");
+							if(j===1){
+							 document.write("<h5>"+i+"</h5>");
+							}else{
+								document.write("<input type='text' style='width:70px'></input>" );
+							}
+						document.write("</td>");
+					}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		</script>
+	</div>
+	</center>
+	<input type="button" onclick="printReport();" value="Imprimir Reporte" ></input>
+</body>
+</html>
