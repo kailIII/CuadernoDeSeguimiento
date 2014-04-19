@@ -1,33 +1,48 @@
+<?php
+session_start();
+$message="";
+if($_POST['username'] == 'emi'){
+	//echo "cccccooree";
+	$message=$PASSS;
+}
+//$message=$_POST['username'];
+//echo "esto:  ".$_SESSION['username'] ;
+
+?>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Logeo</title>
+    <title>.: TROLL :.</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css"  />
 </head>
 <body>
-<?php
-echo 'de';
-?>
-
-
-<form action="" method="post">
-<table align="center" border="1px">
-<tr>
-	<td>Nombre de Usuario</td>
-    <td><input type="text" name="username" style="wi "/>
-</tr>
-<tr>
-	<td>Password</td>
-    <td><input type="password" name="password"/></td>
-</tr>
-<tr>
-	<td colspan="2"><?php if($message != ""){ echo $message;} ?></td>
-
-</tr>
-<tr>
-	<td colspan="2" align="center"><input type="submit" value="Enviar"/></td>
-</tr>
-
-</table>
-</form>
-
+<header class="header">EMI?</header>
+<div class="login">
+    <fieldset>
+        <legend>Acceso</legend>
+        <div >
+            <form method="post">
+                <table align="center" >
+                    <tr>
+                        <td>Nombre de Usuario</td>
+                        <td><input type="text" name="username" />
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="password"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <?php if($message != ""){ echo $message;} ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="Submit" value="Enviar"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </fieldset>
+</div>
 </body>
 </html>
