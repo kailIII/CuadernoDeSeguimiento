@@ -25,20 +25,33 @@
 		<table>
 				<tr>
 					<td>Asignatura: </td>
-					<td>Paradigmas de Analisis</td>
+					<td id="Asignatura">
+						<select>
+							<option>Paradigmas de Analisis I</option>
+							<option>Paradigmas de Analisis II</option>
+							<option>Matematicas</option>
+						</select>
+
+					</td>
 				</tr>
 				<tr>
 					<td>Docente</td>
-					<td>Ing.aaa</td>
+					<td id="docente">Ing. Emi SantaCruz</td>
 				</tr>
 
 				<tr>
 					<td>Curso</td>
-					<td>6to Semestre</td>
+					<td id="curso">
+						<select>
+							<option>6to Semestre</option>
+							<option>4to Semestre</option>
+							<option>3to Semestre</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td>Nro de Clases</td>
-					<td>3</td>
+					<td><input id='NroClases' type="text" style="width: 25px"></input></td>
 				</tr>
 		</table>
 		<hr></hr>
@@ -52,28 +65,65 @@
 	<center>
 	<div id="table">
 		<script>
+			function getMateriaPTL(){
+				var detalles=Array(100);
+				return detalles; 
+			}
+			function getAlumnos(id){
+				var alum=Array("Maria","Alex","Jose","Pedro","Mata","A. Iniesta");
+				return alum;
+			}
+			function getCI(id){
+				var Ci =Array("9981765 lp","9871235 lp","12345678 lp","9871235 lp","9871235 lp","9871235 lp","9871235 lp");
+				return Ci;
+			}
+
+		var nroClases=9;
+		document.getElementById('NroClases').value=nroClases;
+
+/*
+Variables
+1.- Asignatura
+2.- Docente
+3.- Curso
+4.- Nro de Clases
+
+estaticas
+Nro
+Nombre
+CI
+Nota
+Habilitado
+*/
+
+var nroAlumnos=getAlumnos(3);
+var nroCi=getCI(3);
 			document.write(
-				"<table cellpadding=6 cellspaciong=3 border=2>"+
+				"<table cellpadding=4 cellspaciong=2 border=1>"+
 				"<td>Nro</td>"+
 				"<td>Nombre</td>"+
-				"<td>Ci</td>"+
-				"<td>Clase 1</td>"+
-				"<td>Clase 2</td>"+
-				"<td>Clase 3</td>"+
-				"<td>Nota</td>"+
-				"<td>Habilitado</td>");
-			//document.write("<table cellpadding=10 cellspaciong=6 border=6>");
-			for(var i=1;i<=5;i++){
+				"<td>Ci</td>");
 
+				for(var i=1;i<=nroClases;i++){
+					document.write("<td>Clase "+i+"</td>");
+				}
+
+				document.write("<td>Nota</td>"+"<td>Habilitado</td>");
+			
+			for(var i=1;i<=nroAlumnos.length ;i++){
 				document.write("<tr>");
-					for(var j=1;j<=8;j++){
-
+					for(var j=1;j<=nroClases+5;j++){
 						document.write("<td>");
-							if(j===1){
-							 document.write("<h5>"+i+"</h5>");
-							}else{
-								document.write("<input type='text' style='width:70px'></input>" );
-							}
+							switch(j){
+								case 1:document.write("<h5>"+i+"</h5>");break;
+								case 2:document.write("<label>"+nroAlumnos[i-1]+"</label>");break;
+								case 3:document.write("<label>"+nroCi[i-1]+"</label>");break;
+								case nroClases+4:document.write("<label>"+ Math.floor(Math.random()*100)+"</label>" ); break;
+								case nroClases+5: var habil; if(i%2==0)habil="No";else habil="Si";
+
+								 document.write("<label>"+habil+"</label>" );break;
+								default: document.write("<input type='checkbox'></input>" );break;
+								}
 						document.write("</td>");
 					}
 				document.write("</tr>");
